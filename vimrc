@@ -1,3 +1,4 @@
+" Reference website http://www.jianshu.com/p/d908ce81017a?nomobile=yes
 " 1. Install Vim 8
 " 
 " 	a. 	Download the vim 8 source code. Run the command: 
@@ -82,7 +83,7 @@ set foldmethod=syntax
 "set foldmethod=marker
 
 "设置在vim中可以使用鼠标
-set mouse=a
+"set mouse=a
 
 " 设置搜索忽略大小写
 set ignorecase
