@@ -88,6 +88,9 @@ set foldmethod=syntax
 " 设置搜索忽略大小写
 set ignorecase
 
+" 设置搜索输入时直接跳转
+set incsearch
+
 " 你在此设置运行时路径 
 set rtp+=~/.vim/bundle/Vundle.vim  
  
@@ -113,14 +116,14 @@ Plugin 'Valloric/YouCompleteMe'
 " 状态栏
 Plugin 'bling/vim-airline'
 
-" 语法检查
-Plugin 'scrooloose/syntastic'
-
 " 树状文件目录
 Plugin 'scrooloose/nerdtree'
+
 " 树状文件目录对Git加强
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+" 语法检查
+"Plugin 'scrooloose/syntastic'
 " 来自http://vim-scripts.org/vim/scripts.html的插件 
 " Plugin 'L9'  
 "未托管在GitHub上的Git插件 
