@@ -1,4 +1,4 @@
-let g:ycm_global_ycm_extra_conf = './ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vimconfig/ycm_extra_conf.py'
 "按gd 会跳转到定义
 nnoremap <silent> gd :YcmCompleter GoToDefinition<CR>
 "按gb 会跳转到定义
@@ -20,6 +20,7 @@ nnoremap <F3> :call Diagnostics()<CR>
 func! Diagnostics()
 	exec "YcmForceCompileAndDiagnostics"
 	exec "lopen"
+	exec "5wincmd _"
 endfunc
 " 绑定F4为关闭错误分析窗口
 nnoremap <F4> :lclose<CR>

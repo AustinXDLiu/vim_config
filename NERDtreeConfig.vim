@@ -12,7 +12,7 @@ let NERDTreeQuitOnOpen=0
 "显示文件
 let NERDTreeShowFiles=1
 "显示隐藏文件
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 "高亮显示当前文件或目录
 let NERDTreeHightCursorline=1
 "显示行号
@@ -28,7 +28,7 @@ nnoremap <silent> <F2> :NERDTreeToggle<CR>
 "当打开vim且没有文件时自动打开NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 "只剩 NERDTree时自动关闭
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " 设置当文件被改动时自动载入
 set autoread

@@ -83,9 +83,9 @@ flags = [
 './tests/gmock/include',
 # Add include files in work folder
 '-I',
-'/home/austin/catkin_ws/src/pp/include',
-'-I',
-'/home/austin/catkin_ws/devel/include',
+'/opt/ros/indigo/include',
+'-isystem',
+'/usr/include/c++/4.8.4',
 ]
 
 
