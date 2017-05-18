@@ -1,5 +1,5 @@
 " 屏蔽Vi兼容
-set nocompatible              
+set nocompatible
 set backspace=indent,eol,start
 
 " 打开文件类型检测
@@ -12,24 +12,28 @@ let g:solarized_termcolors=256
 set t_Co=256
 colorscheme solarized
 
+" 垂直缩进对齐线的设置
+set list
+set listchars=tab:\|\ ,trail:-,extends:>,precedes:<
+
 " 设置匹配高亮
 set hls
 
 " 设置高亮当前行
 set cul
 
-" 光标移动到buffer的顶部和底部时保持3行距离  
+" 光标移动到buffer的顶部和底部时保持3行距离
 set scrolloff=3
 
 " 打开行号
-set nu 
-  
+set nu
+
 " 设置tab选项
 set noexpandtab
 set ts=4
 
 " 设置换行自动对齐
-set autoindent
+"set autoindent
 set smartindent
 
 " 设置折叠方式为对标志折叠
@@ -45,22 +49,23 @@ set ignorecase
 " 设置搜索输入时直接跳转
 set incsearch
 
-" 你在此设置运行时路径 
-set rtp+=~/.vim/bundle/Vundle.vim  
- 
-" 设置Ctags文件位置
-set tags=~/catkin_ws/src/tags
+" 快捷键清除行尾空格
+map <silent> <C-e> :%s/\s*$//g<CR>
+"autocmd BufWritePre *.cpp :%s/\s\+$//e
 
-" vundle初始化 
-call vundle#begin()  
- 
-" 这应该始终是第一个 
-Plugin 'gmarik/Vundle.vim' 
- 
-" 该例子来自https://github.com/gmarik/Vundle.vim README 
-" 这是Vim 里面的Git集成 
-Plugin 'tpope/vim-fugitive'  
- 
+" 你在此设置运行时路径
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" vundle初始化
+call vundle#begin()
+
+" 这应该始终是第一个
+Plugin 'gmarik/Vundle.vim'
+
+" 该例子来自https://github.com/gmarik/Vundle.vim README
+" 这是Vim 里面的Git集成
+Plugin 'tpope/vim-fugitive'
+
 " 在行首显示Git diff 的插件
 Plugin 'airblade/vim-gitgutter'
 
@@ -78,20 +83,20 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " 语法检查
 "Plugin 'scrooloose/syntastic'
-" 来自http://vim-scripts.org/vim/scripts.html的插件 
-" Plugin 'L9'  
-"未托管在GitHub上的Git插件 
-" Plugin 'git://git.wincent.com/command-t.git'  
-"本地机器上的git软件库（即编写自己的插件时） 
-" Plugin 'file:///home/gmarik/path/to/plugin'  
-" sparkup vim脚本在名为vim的该软件库子目录下。 
-" 传递路径，合理设置运行时路径。 
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} 
-" 与L9避免名称冲突 
-" Plugin 'user/L9', {'name': 'newL9'}  
- 
-"每个插件都应该在这一行之前  
-call vundle#end()            " required 
+" 来自http://vim-scripts.org/vim/scripts.html的插件
+" Plugin 'L9'
+"未托管在GitHub上的Git插件
+" Plugin 'git://git.wincent.com/command-t.git'
+"本地机器上的git软件库（即编写自己的插件时）
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" sparkup vim脚本在名为vim的该软件库子目录下。
+" 传递路径，合理设置运行时路径。
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" 与L9避免名称冲突
+" Plugin 'user/L9', {'name': 'newL9'}
+
+"每个插件都应该在这一行之前
+call vundle#end()            " required
 
 " NERDtree的设置
 source ~/.vimconfig/NERDtreeConfig.vim
@@ -100,10 +105,19 @@ source ~/.vimconfig/NERDtreeConfig.vim
 source ~/.vimconfig/AirLineConfig.vim
 
 " 跨终端复制设置
-source ~/.vimconfig/CrossTermCopy.vim 
+source ~/.vimconfig/CrossTermCopy.vim
 
 " YCM的设置
 source ~/.vimconfig/YcmConfig.vim
 
 " GitGutter的设置
 source ~/.vimconfig/GitGutterConfig.vim
+
+" CTags的设置
+source ~/.vimconfig/CTagsConfig.vim
+
+" Taglist的设置
+source ~/.vimconfig/TagListConfig.vim
+
+" Cscope的设置
+source ~/.vimconfig/CscopeConfig.vim

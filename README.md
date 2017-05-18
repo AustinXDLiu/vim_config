@@ -1,8 +1,6 @@
 # vim_config
 This is my vim guideline and config for my own.
-Now the guideline is in file vimrc.
 
-Reference website http://www.jianshu.com/p/d908ce81017a?nomobile=yes
 1. Install Vim 8
 
 	a. 	Download the vim 8 source code. Run the command:
@@ -24,11 +22,11 @@ Reference website http://www.jianshu.com/p/d908ce81017a?nomobile=yes
 	a.	In dir ~/.vim/bundle, run 'git clone git://github.com/altercation/vim-colors-solarized.git'.
 	b.	Run 'cp -r ~/.vim/bundle/vim-colors-solarized/colors ~/.vim/'.
 
-4. Copy this file as .vimrc to dir ~/.
+4. Create a soft link for vimrc as ~/.vimrc.
 
 5. Run vim, then use command :PluginInstall to install those modules.
 
-6. If you want to install YouCompleteMe, read the following steps:
+6. If you want to install YouCompleteMe, read the following steps:(Reference website http://www.jianshu.com/p/d908ce81017a?nomobile=yes)
 	a. 	Make sure you have the dependance package, run the command as below:
 		'sudo apt-get install build-essential cmake python-dev'
 	b.	Download llvm+clang-3.9, http://releases.llvm.org/download.html, download the Pre-Built Binaries version. unzip, and copy the bin/ etc to /usr/local.
@@ -45,3 +43,34 @@ Reference website http://www.jianshu.com/p/d908ce81017a?nomobile=yes
 	f.	Compile the YCM core, run this command under ~/.ycm_build.
 		'cmake --build . --target ycm_core'
 	g.	Have fun
+
+7.	If you want to install ctags, read the following steps:
+	a.	Download the source from http://ctags.sourceforge.net/.
+	b.	Unzip it and run './configure' in the folder. Then run 'make' and then 'make install'.
+	c.	Uncommend 'source ~/.vimconfig/CTagsConfig.vim' in vimrc file. Then you can use ctrl+F12 to create the tags file.
+	d.	Use command to generate the tags file for system:
+		'ctags -R -f ~/.vim/sys_tags -I __THROW --extra=+f --languages=c --langmap=c:+.h --c-kinds=+px --fields=+aiKSz /usr/include /usr/local/include /opt/ros/indigo/include'
+
+	Two commands are often used:
+	Ctrl+]	For jumping to the definition
+	Ctrl+t	For jumping back to forward screen
+	Ctrl+F12	For generating the ctags file (Configured in CtagsConfig.vim)
+
+	(Recommand install Taglist)
+
+8.	If you want to install Taglist, read the following steps:
+	a.	Download the source from http://vim-taglist.sourceforge.net/index.htm://vim.sourceforge.io/scripts/script.php?script_id=273.
+	b.	Unzip it and put the folder /plugin and /doc to ~/.vim/.
+	c.	Uncommend 'source ~/.vimconfig/TagListConfig.vim'.
+
+9.	If you want to install Cscope, read the following steps:
+	a.	Download the source from https://sourceforge.net/projects/cscope/files/cscope/.
+	b.	Unzip it and run './configure' in the folder. Then run 'make' and then 'make install'.
+	c.	Download http://cscope.sourceforge.net/cscope_maps.vim to ~/.vim/plugin/.
+	d.	Run the command in your project folder:
+		'cscope -Rbq -f path/xxx.out'
+	e.	Config the ~/.vimconfig/CscopeConfig.vim, import the path/xxx.out you create in the last step.
+
+	Two commands are often used:
+	Ctrl+\ then s	For checking where did it appeared
+	Ctrl+\ then c	For checking where did it used/called
