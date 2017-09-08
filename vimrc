@@ -50,8 +50,10 @@ set ignorecase
 set incsearch
 
 " 快捷键清除行尾空格
-map <silent> <C-e> :%s/\s*$//g<CR>
-"autocmd BufWritePre *.cpp :%s/\s\+$//e
+"map <silent> <C-e> :%s/\s*$//g<CR>
+
+" 当修改vimrc时自动重新加载
+autocmd! bufwritepost vimrc source ~/.vimrc
 
 " 你在此设置运行时路径
 set rtp+=~/.vim/bundle/Vundle.vim
